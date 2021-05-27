@@ -13,12 +13,18 @@ const flappyBird = {
   altura: 24,
   x: 10,
   y: 50,
+  pulo: 4.6,
+  pula(){
+    console.log('devoPular')
+    flappyBird.velocidade= - flappyBird.pulo
+  },
   velocidade: 0,
   gravidade: 0.25,
 
   atualiza(){
+    // if(fazColisao(flappyBird, chao)){}
+
     flappyBird.velocidade = flappyBird.velocidade + flappyBird.gravidade;
-    console.log(flappyBird.velocidade);
     flappyBird.y = flappyBird.y + flappyBird.velocidade;
   },
 
@@ -30,7 +36,7 @@ const flappyBird = {
       flappyBird.x, flappyBird.y, //posição no canvas
       flappyBird.largura, flappyBird.altura, //tamanho no canvas
     );
-  }
+  },
 }
 
 const chao = {
@@ -132,6 +138,9 @@ Telas.JOGO = {
     planoDeFundo.desenha();
     chao.desenha();
     flappyBird.desenha();  
+  },
+  click(){
+    flappyBird.pula();
   },
   atualiza() {
     flappyBird.atualiza();
