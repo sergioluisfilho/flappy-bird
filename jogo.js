@@ -61,7 +61,7 @@ function criaFlappyBird(){
     atualizaOFrameAtual(){
       const intervaloDeFrames = 10;
       const passouOIntervalo = frames % intervaloDeFrames === 0;
-      
+
       if(passouOIntervalo){
       const baseDoIncremento = 1;
       const incremento = baseDoIncremento + flappyBird.frameAtual;
@@ -131,7 +131,16 @@ const planoDeFundo = {
   altura: 204,
   x: 0,
   y: canvas.height - 204,
+  // atualiza() {
+  //   const movimentoDoPlanoDeFundo = 1;
+  //   const repeteEm = planoDeFundo.largura/10;
+  //   const movimentacao =planoDeFundo.x - movimentoDoPlanoDeFundo;
+
+  //   planoDeFundo.x = movimentacao % repeteEm;
+
+  // },
   desenha() {
+    // planoDeFundo.atualiza();
     contexto.fillStyle = '#70c5ce';
     contexto.fillRect(0,0, canvas.width, canvas.height);
 
