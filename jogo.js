@@ -59,11 +59,15 @@ function criaFlappyBird(){
     ],
     frameAtual: 0,
     atualizaOFrameAtual(){
+      const intervaloDeFrames = 10;
+      const passouOIntervalo = frames % intervaloDeFrames === 0;
+      
+      if(passouOIntervalo){
       const baseDoIncremento = 1;
       const incremento = baseDoIncremento + flappyBird.frameAtual;
       const baseRepeticao = flappyBird.movimentos.length;
       flappyBird.frameAtual = incremento % baseRepeticao;
-
+      } 
     },
     desenha(){
       flappyBird.atualizaOFrameAtual()
